@@ -1,19 +1,22 @@
 import React from 'react';
 import './App.css';
-import Navbar from './components/Navbar';
+// import Navbar from './components/Navbar/Navbar';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Home from './pages';
-import Teams from './pages/contact';
-import SignUp from './pages/home';
+import Contact from './pages/Contact';
+import Home from'./pages/Home';
+import Login from './pages/Login';
+import Register from './pages/Register';
 
 function App() {
 return (
 	<Router>
-	<Navbar />
+	{/* <Navbar /> */}
 	<Routes>
-		<Route path='/' exact component={Home} />
-		<Route path='/team' component={Teams} />
-		<Route path='/sign-up' component={SignUp} />
+		<Route path='/' exact component={Login} />
+		<Route path='/login' component={Login} />
+		<Route path='/register' component={Register} />
+    <Route path='/home' component={Home} />
+    <Route path='/contact' exact component={Contact} />
 	</Routes>
 	</Router>
 );
