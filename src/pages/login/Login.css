@@ -15,8 +15,9 @@
 }
 
 .card-img {
-    background: url("../../../img/logo.png") center/cover no-repeat;
-    width: auto;
+    background: url("../../../img/logo3.png") center/cover no-repeat;
+    height: auto;
+
 }
 
 .banner h1 {

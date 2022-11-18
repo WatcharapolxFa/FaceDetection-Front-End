@@ -6,34 +6,16 @@ import ReactDOM from 'react-dom/client';
 
 import Swal from 'sweetalert2'
 import withReactContent from 'sweetalert2-react-content'
+import Registers from '../register/Register.js';
 
-export default class All extends Component {
-    
-    constructor(props) {
-        super(props);
-        this.state = {
-            visible: false
-        }
-    }
-
-    openModal() {
-        this.setState({
-            visible: true
-        });
-    }
-
-    closeModal() {
-        this.setState({
-            visible: false
-        });
-    }
+export default class Logins extends Component {
     render() {
         return (
             <body>
                 <section class="banner">
                     <div class="card-container">
                         <div class="card-img">
-                            <img src="../../../img/logo.png" alt="" />
+                            <img src="" alt="" />
                         </div>
 
                         <div class="card-content">
@@ -49,26 +31,14 @@ export default class All extends Component {
                                 </div>
 
                                 <div class="form-row">
-                                    <input id='btRegister'type="Button" value="Registr"onClick={() => this.openModal()} />
-                                    <input id="btLogin"type="Button" value="Login" onClick={() => this.openModal()} />
+                                    <input id='btRegister'type="Button" value="Registr"onClick={Registers} />
+                                    <input id="btLogin"type="Button" value="Login" onClick={Registers} />
                                 </div>
 
                             </form>
                         </div>
                     </div>
-                    <Modal
-                        visible={this.state.visible}
-                        width="400"
-                        height="300"
-                        effect="fadeInUp"
-
-                    >
-                        <div class="modalf" >
-                            <h1>Thank you for your Booking!</h1>
-                            <p>We will send you a confirmation E-mail very soon</p>
-                            <input type="Button" value="Close" onClick={() => this.closeModal()} />
-                        </div>
-                    </Modal>
+                    
                 </section>
 
             </body>

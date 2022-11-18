@@ -1,25 +1,6 @@
 import React, { Component } from 'react';
-import Modal from 'react-awesome-modal';
 import './Register.css';
-export default class All extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      visible: false
-    }
-  }
-
-  openModal() {
-    this.setState({
-      visible: true
-    });
-  }
-
-  closeModal() {
-    this.setState({
-      visible: false
-    });
-  }
+export default class Registers extends Component {
   render() {
     return (
 
@@ -33,7 +14,6 @@ export default class All extends Component {
             <div class="card-content">
               <h3>REGISTER</h3>
               <form>
-
                 <div class="form-row">
                   <input type="text" placeholder="Full Name" />
                   <input type="mail" placeholder="E-mail Address" />
@@ -56,19 +36,6 @@ export default class All extends Component {
               </form>
             </div>
           </div>
-          <Modal
-            visible={this.state.visible}
-            width="400"
-            height="300"
-            effect="fadeInUp"
-
-          >
-            <div class="modalf" >
-              <h1>Thank you for your Booking!</h1>
-              <p>We will send you a confirmation E-mail very soon</p>
-              <input type="Button" value="Close" onClick={() => this.closeModal()} />
-            </div>
-          </Modal>
         </section>
 
       </body>
