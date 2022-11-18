@@ -31,7 +31,6 @@ export default class Registers extends Component {
                     <option value="10">Orther</option>
                   </select>
                   <input id="btSubmit" type="Button" value="Confirm" onClick={() => this.openModal()} />
-
                 </div>
               </form>
             </div>

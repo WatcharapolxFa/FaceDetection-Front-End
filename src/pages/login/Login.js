@@ -3,7 +3,6 @@ import Modal from 'react-awesome-modal';
 import './Login.css';
 import { useState } from 'react';
 import ReactDOM from 'react-dom/client';
-
 import Swal from 'sweetalert2'
 import withReactContent from 'sweetalert2-react-content'
 import Registers from '../register/Register.js';
