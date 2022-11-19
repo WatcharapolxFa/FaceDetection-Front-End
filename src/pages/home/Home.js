@@ -30,47 +30,47 @@ function App() {
         createFaLibrary();
         loadModels();
         getData()
-        if(token==null){
+        if (token == null) {
             navigate('/');
         }
-        
+
     }, [])
 
     function getData() {
-        const body ={
-            "token":token
+        const body = {
+            "token": token
         }
         axios
-        .post(baseUrlGet, body)
-        .then((res)=>{
-            console.log(res.data)
-            setDetail(res.data.txt)
-        })
-        .catch((res)=>{
-            console.log("Error")
-        })
+            .post(baseUrlGet, body)
+            .then((res) => {
+                console.log(res.data)
+                setDetail(res.data.txt)
+            })
+            .catch((res) => {
+                console.log("Error")
+            })
         return true
     }
 
     function createComment() {
-        const body ={
-            "token":token
-            ,"text":comment
+        const body = {
+            "token": token
+            , "text": comment
         }
         axios
-        .post(baseUrlPost, body)
-        .then((res)=>{
-            console.log(res.data)
-            getData()
-            setComment("")
-        })
-        .catch((res)=>{
-            console.log("Error")
-        })
+            .post(baseUrlPost, body)
+            .then((res) => {
+                console.log(res.data)
+                getData()
+                setComment("")
+            })
+            .catch((res) => {
+                console.log("Error")
+            })
         return true
     }
-    
-    
+
+
     return (
         <div className="App">
             <Nav></Nav>
@@ -93,16 +93,26 @@ function App() {
                 </div>
             </header>
             <Camera photoMode={mode} />
-           
+            
+            <div className='head_comment'>
+                <p>Note</p>
+            </div>
             <div className='card_comment'>
                 {
-                    detail.map((text)=>(
-                        <div className='subCard_comment'>{text.text}<br></br>{text.createdAt.split('T')[0]}</div>   
+                    detail.map((text) => (
+                        <div className='subCard_comment'>{text.text}<br></br>{text.createdAt.split('T')[0]}</div>
                     ))
                 }
             </div>
-            <input value={comment} onChange={(e) => { setComment(e.target.value) }} type="text" placeholder="comment" />
-            <input id="btSubmit" type="Button" value="Confirm"  onClick={() => {createComment()}} />
+            <div className='input_submit'>
+                <form>
+                    <input value={comment} onChange={(e) => { setComment(e.target.value) }} type="text" placeholder="comment" />
+                    <input className='button button2' type="Button" value="Confirm" onClick={() => { createComment() }} />
+                </form>
+                
+                
+            </div>
+
         </div>
     );
 }

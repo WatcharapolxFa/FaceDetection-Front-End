@@ -29,10 +29,19 @@
     margin: 0 0.25rem;
     
 }
+.head_comment {
+    border-radius: 20px;
+    padding: 20px;
+    width: 580px;
+    height: 20px;
+    margin: 0 auto;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #2EA9D3;
+}
+
 
 .card_comment {
-    border-radius: 20px;
-    margin: 20px;
     padding: 20px;
     width: 600px;
     height: 500px;
@@ -41,7 +50,7 @@
     justify-content: space-between;
     align-items: center;
     color: rgb(0, 57, 107);
-    background-color: rgb(57, 228, 185);
+    background-color: #2EA9D3;
     overflow-y: scroll;
 }
 .subCard_comment{
@@ -50,3 +59,48 @@
     border-radius: 10px;
     background-color: rgb(255, 255, 255);
 }
+
+.input_submit{
+    border-radius: 20px;
+    margin: 20px;
+    padding: 20px;
+    width: 600px;
+    height: 500px;
+    margin: 0 auto;
+    padding: 1rem;
+    justify-content: space-between;
+    align-items: center;
+}
+.button {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+  }
+
+.button2:hover {
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+  }
+
+input[type=text] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: 3px solid #ccc;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+    outline: none;
+  }
+  
+input[type=text]:focus {
+    border: 3px solid #555;
+  }
