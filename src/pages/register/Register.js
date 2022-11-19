@@ -1,7 +1,27 @@
 import React, { Component } from 'react';
 import './Register.css';
-export default class Registers extends Component {
-  render() {
+import { signin } from '../../actions';
+
+const Register=()=> {
+
+   
+  const [firstName,setFirstName] = React.useState("");
+  const [lastName,setLastName] = React.useState("");
+  const [username,setUsername] = React.useState("");
+  const [email,setEmail] = React.useState("");
+  const [password,setPassword] = React.useState("");
+  const [gender,setGender] = React.useState("");
+  const [age,setAge] = React.useState(0);
+
+    
+  function signinOnclick() {
+    const body ={
+      "firstName":'',
+    }
+    signin()
+  }
+
+ 
     return (
 
       <body>
@@ -30,7 +50,7 @@ export default class Registers extends Component {
                     <option value="10">Female</option>
                     <option value="10">Orther</option>
                   </select>
-                  <input id="btSubmit" type="Button" value="Confirm" onClick={() => this.openModal()} />
+                  <input id="btSubmit" type="Button" value="Confirm"  onClick={() => {signinOnclick()}} />
                 </div>
               </form>
             </div>
@@ -39,5 +59,7 @@ export default class Registers extends Component {
 
       </body>
     )
-  }
+  
 }
+
+export default Register
