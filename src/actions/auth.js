@@ -13,17 +13,7 @@ const  login =(body)=>{
 }
 
 const signup =(body)=>{
-    axios
-    .post(baseURLSignup, body)
-    .then((res)=>{
-        console.log(res.data)
-        return true
-    })
-    .catch((res)=>{
-        console.log(res.data)
-        return false
-    })
-    return true
+   
 }
 
 export  {login,signup}

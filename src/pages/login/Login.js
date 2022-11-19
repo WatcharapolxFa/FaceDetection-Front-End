@@ -58,14 +58,14 @@ const Login=()=> {
                                 </div>
 
                                 <div class="form-row">
-                                    <input id='btRegister'type="Button" value="Registr"onClick={Registers} />
+                                    <input id='btRegister'type="Button" value="Register"onClick={()=>{navigate('/register')}} />
                                     <input id="btLogin"type="Button" value="Login" onClick={()=>{loginOnclick()}} />
                                 </div>
 
                             </form>
                         </div>
                     </div>
-                     {!noti?(<h6>Password or Username Incorrect</h6>):(<div></div>)}
+                     {!noti?(<h6 className='notiRed'> Password or Username Incorrect</h6>):(<div></div>)}
                     
                 </section>
 
