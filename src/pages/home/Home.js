@@ -41,6 +41,38 @@ function App() {
                 </div>
             </header>
             <Camera photoMode={mode} />
+            <div className='card_comment'>
+                <div className='subCard_comment'>
+                    asdasd
+                </div>
+                <div className='subCard_comment'>
+                    asdasd
+                </div>
+                <div className='subCard_comment'>
+                    asdasd
+                </div>
+                <div className='subCard_comment'>
+                    asdasd
+                </div>
+                <div className='subCard_comment'>
+                    asdasd
+                </div>
+                <div className='subCard_comment'>
+                    asdasd
+                </div>
+                <div className='subCard_comment'>
+                    asdasd
+                </div>
+                <div className='subCard_comment'>
+                    asdasd
+                </div>
+                <div className='subCard_comment'>
+                    asdasd
+                </div>
+                <div className='subCard_comment'>
+                    asdasd
+                </div>
+            </div>
             <p>
                 Make by{' '}
                 <span role="img" aria-label="heart-emoji">

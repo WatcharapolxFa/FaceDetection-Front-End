@@ -29,3 +29,24 @@
     margin: 0 0.25rem;
     
 }
+
+.card_comment {
+    border-radius: 20px;
+    margin: 20px;
+    padding: 20px;
+    width: 600px;
+    height: 500px;
+    margin: 0 auto;
+    padding: 0.5rem;
+    justify-content: space-between;
+    align-items: center;
+    color: rgb(0, 57, 107);
+    background-color: rgb(57, 228, 185);
+    overflow-y: scroll;
+}
+.subCard_comment{
+    margin: 20px;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: rgb(255, 255, 255);
+}
