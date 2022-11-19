@@ -42,10 +42,7 @@ const Results = ({ results, processing }) => {
               <FontAwesomeIcon icon={mapExpressionToEmoji(results[0].expressions.asSortedArray()[0].expression)} size="4x" />
             </div>
             <div className="results__CommentBox">
-              <p>I think...</p>
-              <p>You look {results[0].expressions.asSortedArray()[0].expression}</p>
-              <p>You seem to be {Math.round(results[0].age)} years old</p>
-              <p>I think you are a {results[0].gender}</p>
+            
             </div>
           </div>
         )}

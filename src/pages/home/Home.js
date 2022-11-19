@@ -41,13 +41,6 @@ function App() {
                 </div>
             </header>
             <Camera photoMode={mode} />
-            <p>
-                Make by{' '}
-                <span role="img" aria-label="heart-emoji">
-                    ❤️
-                </span>{' '}
-                Wuttiporn and Yuwadee .
-            </p>
         </div>
     );
 }
