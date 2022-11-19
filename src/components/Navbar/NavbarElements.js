@@ -4,7 +4,7 @@ import styled from 'styled-components';
 
 export const Nav = styled.nav`
 font-family: Inter;
-background: #63D471;
+background: #3CC3BD;
 height: 85px;
 display: flex;
 justify-content: space-between;
@@ -24,7 +24,7 @@ padding: 0 1rem;
 height: 100%;
 cursor: pointer;
 &.active {
-	color: #54CAC5;
+	color: #ffffff;
 }
 `;
 
@@ -75,7 +75,7 @@ font-family: Inter;
 border-radius: 4px;
 background: #808080;
 padding: 10px 22px;
-color: #000000;
+color: #ffffff;
 outline: none;
 border: none;
 cursor: pointer;
