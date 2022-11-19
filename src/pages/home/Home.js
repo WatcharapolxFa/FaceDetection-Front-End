@@ -21,7 +21,7 @@ function App() {
                         <span>Face detection for emotion</span>
                     </h1>
                     <div className="App__switcher">
-                        <FontAwesomeIcon icon="camera" color={mode ? '#007c6c' : '#cccccc'} />
+                        <FontAwesomeIcon icon="camera" color={mode ? '#3CC3BD' : '#cccccc'} />
                         <Switch
                             onChange={() => setMode(!mode)}
                             uncheckedIcon={false}
@@ -29,17 +29,17 @@ function App() {
                             checked={!mode}
                             className="App__switcher-switch"
                         />
-                        <FontAwesomeIcon icon="video" color={!mode ? '#007c6c' : '#cccccc'} />
+                        <FontAwesomeIcon icon="video" color={!mode ? '#3CC3BD' : '#cccccc'} />
                     </div>
                 </div>
             </header>
             <Camera photoMode={mode} />
             <p>
-                Made with{' '}
+                Make by{' '}
                 <span role="img" aria-label="heart-emoji">
                     ❤️
                 </span>{' '}
-                by Rishabh.
+                Wuttiporn and Yuwadee .
             </p>
         </div>
     );
