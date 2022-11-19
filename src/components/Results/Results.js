@@ -40,7 +40,12 @@ const Results = ({ results, processing }) => {
             </div>
             <div className="results__emoji">
               <FontAwesomeIcon icon={mapExpressionToEmoji(results[0].expressions.asSortedArray()[0].expression)} size="4x" />
-              <FontAwesomeIcon icon={mapExpressionToEmoji(results[0].gender)} size="4x" />
+            </div>
+            <div>
+              <p>I think...</p>
+              <p>You look {results[0].expressions.asSortedArray()[0].expression}</p>
+              <p>You seem to be {Math.round(results[0].age)} years old</p>
+              <p>I think you are a {results[0].gender}</p>
             </div>
           </div>
         )}
