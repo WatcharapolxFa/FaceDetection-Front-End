@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import {
     Nav,
     NavLink,
@@ -14,8 +15,7 @@ const Navbar = () => {
             <Nav>
                 <Bars />
                 
-                <NavMenu>
-                </NavMenu>
+                <NavMenu/>
                 <NavBtn>
                     <NavLink to='/home' activeStyle>
                         HOME

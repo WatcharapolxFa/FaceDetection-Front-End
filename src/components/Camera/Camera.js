@@ -29,7 +29,7 @@ const Camera = ({ photoMode }) => {
   };
 
   const clearOverlay = (canvas) => {
-    canvas.current.getContext('2d').clearRect(0, 0, canvas.width, canvas.height);
+    canvas?.current?.getContext('2d').clearRect(0, 0, canvas.width, canvas.height);
   };
 
   useEffect(() => {

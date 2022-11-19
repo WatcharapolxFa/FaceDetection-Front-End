@@ -75,7 +75,7 @@ font-family: Inter;
 border-radius: 4px;
 background: #808080;
 padding: 10px 22px;
-color: #ffffff;
+color: #000000;
 outline: none;
 border: none;
 cursor: pointer;

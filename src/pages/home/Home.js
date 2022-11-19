@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
 import { loadModels } from '../../helpers/faceApi';
 import { createFaLibrary } from '../../helpers/icons';
@@ -10,11 +10,15 @@ import Nav from '../../components/Navbar/Navbar';
 
 
 import './Home.css';
-createFaLibrary();
-loadModels();
+
 function App() {
     const [mode, setMode] = useState(false); //true = photo mode; false = video mode
 
+    useEffect(() => {
+        createFaLibrary();
+        loadModels();
+    }, [])
+    
     return (
         <div className="App">
             <Nav></Nav>
