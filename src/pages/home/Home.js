@@ -6,6 +6,8 @@ import { createFaLibrary } from '../../helpers/icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Switch from 'react-switch';
 import Camera from '../../components/Camera/Camera';
+import Nav from '../../components/Navbar/Navbar';
+
 
 import './Home.css';
 createFaLibrary();
@@ -15,6 +17,7 @@ function App() {
 
     return (
         <div className="App">
+            <Nav></Nav>
             <header>
                 <div className="App__header">
                     <h1>

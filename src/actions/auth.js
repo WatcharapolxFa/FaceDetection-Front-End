@@ -1,27 +1,29 @@
 import axios from "axios";
 
-const baseURLPost = "http://localhost:1000/api/auth/signup";
+
+const baseURLSignup = "http://localhost:1000/api/auth/signup";
 
 
-const login =()=>{
 
 
-
+const  login =(body)=>{
+  
+    
+   
 }
 
-const signin =()=>{
-    console.log("asdas")
+const signup =(body)=>{
     axios
-    .post(baseURLPost, {
-        "firstName":"test",
-        "lastName":"test",
-        "username":"test49917111asdasaaasdassdaaasdassdasdasdasdasds",
-        "email":"test49asasdasasdasdaasdasdasdassasdasasd9@gmail.com",
-        "password":"Aa123456789",
-        "gender":"male",
-        "age":16
+    .post(baseURLSignup, body)
+    .then((res)=>{
+        console.log(res.data)
+        return true
     })
+    .catch((res)=>{
+        console.log(res.data)
+        return false
+    })
+    return true
 }
 
-
-export  {login,signin}
+export  {login,signup}

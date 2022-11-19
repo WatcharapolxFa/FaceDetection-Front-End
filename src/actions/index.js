@@ -1,3 +1,3 @@
-import {signin,login} from './auth'
+import {signup,login} from './auth'
 
-export {signin,}
+export {signup,login}
