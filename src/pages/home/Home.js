@@ -7,17 +7,69 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Switch from 'react-switch';
 import Camera from '../../components/Camera/Camera';
 import Nav from '../../components/Navbar/Navbar';
+import axios from "axios";
+import { useNavigate } from 'react-router-dom';
 
 
 import './Home.css';
 
+const baseUrlGet = "https://facedetectionbackend.herokuapp.com/api/detailGet"
+const baseUrlPost = "https://facedetectionbackend.herokuapp.com/api/detail"
+
 function App() {
-    const [mode, setMode] = useState(false); //true = photo mode; false = video mode
+    const navigate = useNavigate();
+
+    const token = localStorage.getItem("token")
+
+    const [mode, setMode] = useState(false);
+    const [detail, setDetail] = useState([]);
+    const [comment, setComment] = useState("");
+    //true = photo mode; false = video mode
 
     useEffect(() => {
         createFaLibrary();
         loadModels();
+        getData()
+        if(token==null){
+            navigate('/');
+        }
+        
     }, [])
+
+    function getData() {
+        const body ={
+            "token":token
+        }
+        axios
+        .post(baseUrlGet, body)
+        .then((res)=>{
+            console.log(res.data)
+            setDetail(res.data.txt)
+        })
+        .catch((res)=>{
+            console.log("Error")
+        })
+        return true
+    }
+
+    function createComment() {
+        const body ={
+            "token":token
+            ,"text":comment
+        }
+        axios
+        .post(baseUrlPost, body)
+        .then((res)=>{
+            console.log(res.data)
+            getData()
+            setComment("")
+        })
+        .catch((res)=>{
+            console.log("Error")
+        })
+        return true
+    }
+    
     
     return (
         <div className="App">
@@ -41,45 +93,16 @@ function App() {
                 </div>
             </header>
             <Camera photoMode={mode} />
+           
             <div className='card_comment'>
-                <div className='subCard_comment'>
-                    asdasd
-                </div>
-                <div className='subCard_comment'>
-                    asdasd
-                </div>
-                <div className='subCard_comment'>
-                    asdasd
-                </div>
-                <div className='subCard_comment'>
-                    asdasd
-                </div>
-                <div className='subCard_comment'>
-                    asdasd
-                </div>
-                <div className='subCard_comment'>
-                    asdasd
-                </div>
-                <div className='subCard_comment'>
-                    asdasd
-                </div>
-                <div className='subCard_comment'>
-                    asdasd
-                </div>
-                <div className='subCard_comment'>
-                    asdasd
-                </div>
-                <div className='subCard_comment'>
-                    asdasd
-                </div>
+                {
+                    detail.map((text)=>(
+                        <div className='subCard_comment'>{text.text}<br></br>{text.createdAt.split('T')[0]}</div>   
+                    ))
+                }
             </div>
-            <p>
-                Make by{' '}
-                <span role="img" aria-label="heart-emoji">
-                    ❤️
-                </span>{' '}
-                Wuttiporn and Yuwadee .
-            </p>
+            <input value={comment} onChange={(e) => { setComment(e.target.value) }} type="text" placeholder="comment" />
+            <input id="btSubmit" type="Button" value="Confirm"  onClick={() => {createComment()}} />
         </div>
     );
 }
