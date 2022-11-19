@@ -1,24 +1,29 @@
-import React, { Component } from 'react';
+import React from 'react';
 import './Register.css';
-import { signin } from '../../actions';
+import { signup } from '../../actions';
 
 const Register=()=> {
 
    
-  const [firstName,setFirstName] = React.useState("");
-  const [lastName,setLastName] = React.useState("");
+  const [fullName,setFullName] = React.useState("");
   const [username,setUsername] = React.useState("");
   const [email,setEmail] = React.useState("");
   const [password,setPassword] = React.useState("");
   const [gender,setGender] = React.useState("");
-  const [age,setAge] = React.useState(0);
+  const [call,setCall] = React.useState("");
 
+  
     
-  function signinOnclick() {
+  function signupOnclick() {
     const body ={
-      "firstName":'',
+      "fullName":fullName,
+      "username":username,
+      "email":email,
+      "password":password,
+      "gender":gender,
+      "call":call
     }
-    signin()
+    signup(body)
   }
 
  
@@ -35,22 +40,22 @@ const Register=()=> {
               <h3>REGISTER</h3>
               <form>
                 <div class="form-row">
-                  <input type="text" placeholder="Full Name" />
-                  <input type="mail" placeholder="E-mail Address" />
+                  <input value={fullName} onChange={(e)=>{setFullName(e.target.value)}} type="text" placeholder="Full Name" />
+                  <input value={email} onChange={(e)=>{setEmail(e.target.value)}} type="mail" placeholder="E-mail Address" />
                 </div>
                 <div class="form-row">
-                  <input type="text" placeholder="Username" />
-                  <input type="password" placeholder="Password" />
+                  <input value={username} onChange={(e)=>{setUsername(e.target.value)}} type="text" placeholder="Username" />
+                  <input value={password}  onChange={(e)=>{setPassword(e.target.value)}} type="password" placeholder="Password" />
                 </div>
                 <div class="form-row">
-                  <input type="text" placeholder="call" />
-                  <select name="Specify gender">
+                  <input value={call} onChange={(e)=>{setCall(e.target.value)}}  type="text" placeholder="call" />
+                  <select value={gender} onChange={(e)=>{setGender(e.target.value)}} name="Specify gender">
                     <option value="gender">Specify gender</option>
-                    <option value="10">Male</option>
-                    <option value="10">Female</option>
-                    <option value="10">Orther</option>
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                    <option value="Orther">Orther</option>
                   </select>
-                  <input id="btSubmit" type="Button" value="Confirm"  onClick={() => {signinOnclick()}} />
+                  <input id="btSubmit" type="Button" value="Confirm"  onClick={() => {signupOnclick()}} />
                 </div>
               </form>
             </div>

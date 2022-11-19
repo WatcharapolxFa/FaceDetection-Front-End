@@ -1,14 +1,41 @@
 import React, { Component } from 'react';
-import Modal from 'react-awesome-modal';
 import './Login.css';
-import { useState } from 'react';
-import ReactDOM from 'react-dom/client';
-import Swal from 'sweetalert2'
-import withReactContent from 'sweetalert2-react-content'
+import { login } from '../../actions';
 import Registers from '../register/Register.js';
+import {useNavigate} from 'react-router-dom';
+import axios from "axios";
 
-export default class Logins extends Component {
-    render() {
+const Login=()=> {
+    const [username,setUsername] = React.useState("");
+    const [password,setPassword] = React.useState("");
+
+    const [noti,setNoti] = React.useState(true);
+    const baseURLSignin = "http://localhost:1000/api/auth/signin";
+
+    const navigate = useNavigate();
+
+    async function loginOnclick() {
+
+        
+        const body ={
+          "username":username,
+          "password":password,
+        }
+
+        axios
+        .post(baseURLSignin, body)
+        .then((res)=>{
+            localStorage.setItem("token",res.data.accessToken)
+            navigate('/home');
+            setNoti(true)
+        })
+        .catch((res)=>{
+            console.log(res.data)
+            setNoti(false)
+        })
+
+    }
+    
         return (
             <body>
                 <section class="banner">
@@ -16,31 +43,35 @@ export default class Logins extends Component {
                         <div class="card-img">
                             <img src="" alt="" />
                         </div>
-
+                       
                         <div class="card-content">
                             <h3>Login</h3>
+                            
                             <form>
-                                
+                            
                             <div class="form-row">
                                     
-                                    <input type="text" placeholder="Username" />
+                                    <input value={username} onChange={(e)=>{setUsername(e.target.value)}} type="text" placeholder="Username" />
                                 </div>
                                 <div class="form-row">
-                                    <input type="password" placeholder="Password" />
+                                    <input value={password} onChange={(e)=>{setPassword(e.target.value)}} type="password" placeholder="Password" />
                                 </div>
 
                                 <div class="form-row">
                                     <input id='btRegister'type="Button" value="Registr"onClick={Registers} />
-                                    <input id="btLogin"type="Button" value="Login" onClick={Registers} />
+                                    <input id="btLogin"type="Button" value="Login" onClick={()=>{loginOnclick()}} />
                                 </div>
 
                             </form>
                         </div>
                     </div>
+                     {!noti?(<h6>Password or Username Incorrect</h6>):(<div></div>)}
                     
                 </section>
 
             </body>
         )
-    }
+    
 }
+
+export default Login
