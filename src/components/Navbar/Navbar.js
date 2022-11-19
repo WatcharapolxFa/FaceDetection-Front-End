@@ -21,7 +21,7 @@ const Navbar = () => {
                         HOME
                     </NavLink>
                     <NavLink  to='/contact' activeStyle>
-                        CONTACT
+                        CONTACE
                     </NavLink>
                     <NavBtnLink to='/'>LOGOUT</NavBtnLink>
                 </NavBtn>

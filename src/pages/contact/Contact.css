@@ -1,0 +1,92 @@
+.banner {
+    min-height: 100vh;
+    background: #D7F1F0 center/cover no-repeat;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+
+}
+
+.card-container {
+    display: grid;
+    grid-template-columns: 800px 800px;
+}
+
+.card-img {
+    background: url("../../../img/logo3.png") center/cover no-repeat;
+    height: auto;
+
+}
+
+.banner h1 {
+    padding-bottom: 40px;
+    margin-bottom: 20px;
+    padding-top: 0px;
+}
+
+.card-content {
+    background: #fff;
+    height: 800px;
+}
+
+.card-content h3 {
+    text-align: center;
+    color: #000;
+    padding: 25px 0 10px 0;
+    font-size: 26px;
+    font-weight: 500;
+}
+
+.form-row {
+    display: flex;
+    width: 90%;
+    margin: 0 auto;
+}
+
+form select,
+form input {
+    display: block;
+    width: 100%;
+    margin: 15px 12px;
+    padding: 5px;
+    font-size: 15px;
+    font-family: 'Poppins', sans-serif;
+    outline: none;
+    border: none;
+    border-bottom: 1px solid #eee;
+    font-weight: 300;
+}
+
+input[type=text],
+form input[type=number],
+form input::placeholder,
+select {
+    color: #9a9a9a;
+}
+
+@media(max-width: 992px) {
+    .card-container {
+        grid-template-columns: 100%;
+        width: 100vw;
+    }
+
+    .card-img {
+        height: 330px;
+    }
+}
+
+.modalf h1 {
+    padding-top: 10%;
+    color: rgb(114, 114, 114);
+    font-size: 3vh;
+}
+
+.modalf p {
+    color: rgb(114, 114, 114);
+    font-size: 2vh;
+    padding-top: 10%;
+    padding-bottom: 10%;
+}
+
