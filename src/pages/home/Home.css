@@ -34,7 +34,7 @@
     padding: 20px;
     width: 580px;
     height: 20px;
-    margin: 0 auto;
+    margin: 0 auto 20px;
     justify-content: space-between;
     align-items: center;
     background-color: #2EA9D3;
@@ -42,7 +42,6 @@
 
 
 .card_comment {
-    padding: 20px;
     width: 600px;
     height: 500px;
     margin: 0 auto;
