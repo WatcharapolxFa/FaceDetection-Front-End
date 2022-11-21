@@ -13,8 +13,8 @@ import { useNavigate } from 'react-router-dom';
 
 import './Home.css';
 
-const baseUrlGet = "https://facedetectionbackend.herokuapp.com/api/detailGet"
-const baseUrlPost = "https://facedetectionbackend.herokuapp.com/api/detail"
+const baseUrlGet = "https://server-facedetection.herokuapp.com/api/detailGet"
+const baseUrlPost = "https://server-facedetection.herokuapp.com/api/detail"
 
 function App() {
     const navigate = useNavigate();

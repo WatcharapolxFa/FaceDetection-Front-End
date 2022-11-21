@@ -3,7 +3,7 @@ import './Register.css';
 import { signup } from '../../actions';
 import axios from "axios";
 import {useNavigate} from 'react-router-dom';
-const baseURLSignup = "https://facedetectionbackend.herokuapp.com/api/auth/signup";
+const baseURLSignup = "https://server-facedetection.herokuapp.com/api/auth/signup";
 const Register=()=> {
 
   const navigate = useNavigate();
