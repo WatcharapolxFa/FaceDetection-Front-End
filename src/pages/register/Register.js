@@ -55,11 +55,11 @@ const Register=()=> {
               <form>
                 <div class="form-row">
                   <input value={fullName} onChange={(e)=>{setFullName(e.target.value)}} type="text" placeholder="Full Name" />
-                  <input value={email} onChange={(e)=>{setEmail(e.target.value)}} type="mail" placeholder="E-mail Address" />
+                  <input className="borderBox" value={email} onChange={(e)=>{setEmail(e.target.value)}} type="mail" placeholder="E-mail Address" />
                 </div>
                 <div class="form-row">
                   <input value={username} onChange={(e)=>{setUsername(e.target.value)}} type="text" placeholder="Username" />
-                  <input value={password}  onChange={(e)=>{setPassword(e.target.value)}} type="password" placeholder="Password" />
+                  <input className="borderPassword" value={password}  onChange={(e)=>{setPassword(e.target.value)}} type="password" placeholder="Password" />
                 </div>
                 <div class="form-row">
                   <input value={call} onChange={(e)=>{setCall(e.target.value)}}  type="text" placeholder="call" />

@@ -67,7 +67,7 @@ select {
 }
 #btRegister{
     color: #fff;
-    background: #f2745f;
+    background: #66CCFF;
     padding: 12px 0;
     border-radius: 8px;
     cursor: pointer;
@@ -112,5 +112,17 @@ input[type=button]:hover {
 .modalf input[type=button] {
     padding-left: 10%;
     padding-right: 10%;
+}
+
+
+.PasswordBor{
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: 3px solid #ccc;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+    outline: none;
 }
 
